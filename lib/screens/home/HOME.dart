@@ -55,7 +55,14 @@ class Home extends StatelessWidget {
         ),
         body: Container(
 
-            child: BrewList(),
+            child: BrewList(
+            return FutureBuilder(
+            future: Geolocator().getCurrentPosition(
+                desiredAccuracy: LocationAccuracy.best),
+            Position pos = snapshot.data;
+            userLatitude = pos.latitude;
+            userLongitude = pos.longitude;
+            ),
       ),
     )
     );
